@@ -11,22 +11,7 @@ library(parcats)
 library(easyalluvial)
 library(forcats)
 
-setwd("D:/ABCN/Github/manos-a-la-data/data/2020/2020-07-29")
-barreras <- readxl::read_xls("Data Logros al 31.12.2017.xls",skip = 1)
-
-barreras$`FECHA DE MODIF.`
-table(barreras$`TIPO DE ACTUACIÓN`)
-table(barreras$ENTIDAD)
-unique(barreras$ENTIDAD)
-
-barreras$TIPO_ENTIDAD <- "Otros"
-barreras$TIPO_BARRERA <- "Otros"
-barreras$TIPO_ADECUACION <- "Otros"
-
-names(barreras)
-
-View(barreras)
-
+JAJAJA
 barreras <- barreras %>%
   mutate(TIPO_ENTIDAD = case_when(
                           grepl("MUNICIPALIDA", ENTIDAD) ~ "Gobierno Regional",
